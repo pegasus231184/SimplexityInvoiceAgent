@@ -62,9 +62,9 @@ class EmailService:
 
             <div class="summary">
                 <h3>Financial Summary</h3>
-                <p><strong>Approved Amount:</strong> {report_data['currency']} {report_data['total_approved_amount']:,.2f}</p>
-                <p><strong>Excluded Amount:</strong> {report_data['currency']} {report_data['total_excluded_amount']:,.2f}</p>
-                <p><strong>Maximum Limit:</strong> {report_data['currency']} {report_data['max_limit']:,.2f}</p>
+                <p><strong>Approved Amount:</strong> {report_data['currency']} {float(report_data.get('total_approved_amount', 0)):,.2f}</p>
+                <p><strong>Excluded Amount:</strong> {report_data['currency']} {float(report_data.get('total_excluded_amount', 0)):,.2f}</p>
+                <p><strong>Maximum Limit:</strong> {report_data['currency']} {float(report_data.get('max_limit', 0)):,.2f}</p>
             </div>
         """
 
