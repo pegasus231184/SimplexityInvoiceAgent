@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, jsonify, flash, redirect, url_for, session
-from werkzeug.utils import secure_filename
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 import os
 from datetime import datetime
 from config import Config

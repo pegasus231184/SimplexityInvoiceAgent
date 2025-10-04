@@ -87,6 +87,8 @@ MAIL_USE_TLS=True
 FLASK_ENV=production
 ```
 
+**Nota**: Railway inyecta automáticamente la variable `PORT`, no es necesario configurarla manualmente.
+
 ### 4. Generar Secret Key
 
 Para generar una SECRET_KEY segura:
@@ -144,12 +146,13 @@ Railway muestra automáticamente:
 
 ### Error: "Application failed to respond"
 
-**Causa**: Variables de entorno no configuradas
+**Causa**: Variables de entorno no configuradas o puerto incorrecto
 
 **Solución**:
 1. Verifica que `OPENAI_API_KEY` esté configurada
 2. Verifica `MAIL_USERNAME` y `MAIL_PASSWORD`
-3. Agrega `PORT` variable (aunque Railway la inyecta automáticamente)
+3. Railway inyecta automáticamente la variable `PORT` - el código ya está configurado para usarla
+4. Verifica que `Procfile` y `railway.json` usen `$PORT` correctamente
 
 ### Error: "OpenAI API Error"
 
